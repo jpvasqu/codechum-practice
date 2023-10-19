@@ -1,0 +1,33 @@
+#include<stdio.h>
+
+
+
+int main(){
+
+    
+    int input;
+
+
+    printf("Enter n: ");
+    scanf("%d", &input);
+
+
+    if (input % 3 == 0 && input % 4 != 0){
+        printf("Divisible by 3");
+    }
+    else if (input % 3 != 0 && input % 4 == 0){
+        printf("Divisible by 4");
+    }
+    else{
+        printf("Divisible by 3 and 4");
+    }
+    
+
+
+    
+    
+    
+
+
+    return 0;
+}
