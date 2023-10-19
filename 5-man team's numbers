@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+
+int main(){
+
+    char input[50];
+    
+    
+    
+    printf("Enter the 5-man team's numbers: ");
+    scanf("%s", &input);
+
+    for (int i = 0; i < 5; i++){
+        if (i < 4){
+            printf("%c ", input[i]);
+        }
+        else{
+            printf("%c", input[i]);
+        }
+    }
+    
+
+    
+    return 0;
+}
