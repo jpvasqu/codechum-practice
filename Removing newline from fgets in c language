@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+
+int main(){
+    char input2[100];
+    
+
+
+    printf("Enter string: ");
+    fgets(input2,100,stdin);
+    for (int i = 0; i < strlen(input2); i++){
+        if (input2[i] == '\n'){
+            input2[i] = '\0';
+            break;
+        }
+    }
+    
+    printf("%s", input2);
+    printf("This is a sample text");
+    
+    
+
+    return 0;
+}
