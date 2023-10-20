@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+
+int main(){
+
+    
+    
+    int students;
+
+        
+    printf("Enter number of students: ");
+    scanf("%d", &students);
+
+    int array[students][4];
+
+    for (int i = 0; i < students; i++){
+        int sum = 0;
+        for (int a = 0; a < 3; a++){
+            
+            if (a == 0){
+                printf("Enter student #%d score in math: ", i+1);
+                scanf("%d", &array[i][a]);
+                sum = sum + array[i][a];
+            }
+            else if (a == 1){
+                printf("Enter student #%d score in science: ", i+1);
+                scanf("%d", &array[i][a]);
+                sum = sum + array[i][a];
+            }
+            else{
+                printf("Enter student #%d score in english: ", i+1);
+                scanf("%d", &array[i][a]);
+                sum = sum + array[i][a];
+            }
+            
+            array[i][3] = sum / 3;
+            
+        }
+        printf("\n");
+    }
+
+    for (int i = 0; i < students; i++){
+        printf("student #%d: ", i+1);
+        for (int a = 0; a < 4; a++){
+            if (a == 0){
+                printf("math: %d ", array[i][a]);
+                
+            }
+            else if (a == 1){
+                printf("science: %d ", array[i][a]);
+                
+            }
+            else if(a == 2){
+                printf("english: %d ", array[i][a]);
+                
+            }
+            else{
+                printf("average: %d ", array[i][a]);
+            }
+            
+        }
+        printf("\n\n");
+    }
+    return 0;
+}
