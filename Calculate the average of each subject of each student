@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+
+int main(){
+    int number_students;
+    int number_subjects;
+    int number_quizes;
+
+    printf("Enter total number of students: ");
+    scanf("%d", &number_students);
+
+    printf("Enter total number of subjects: ");
+    scanf("%d", &number_subjects);
+
+    printf("Enter total number of quizes: ");
+    scanf("%d", &number_quizes);
+
+    printf("\n");
+
+    int array[number_students][number_subjects][number_quizes+1];
+
+    for (int i = 0; i < number_students; i++){
+
+        for (int a = 0; a < number_subjects; a++){
+
+            int quiz_sum = 0;
+
+                for (int b = 0; b < number_quizes; b++){
+                    printf("Student #%d Subject #%d  Quiz #%d: ",i+1,a+1, b+1);
+                    scanf("%d", &array[i][a][b]);
+                    quiz_sum = quiz_sum + array[i][a][b];
+                }
+            array[i][a][number_quizes] = quiz_sum / number_quizes;
+            printf("\n");
+        }
+    }
+
+
+    for (int i = 0; i < number_students; i++){
+        printf("Student #%d \n\n", i+1);
+        for (int a = 0; a < number_subjects; a++){
+            printf("Subject #%d ", a+1);
+            int quiz_sum = 0;
+            for (int b = 0; b <= number_quizes; b++){
+
+                if (b == number_quizes){
+                    printf("Average: %d", array[i][a][b]);
+                }
+                else{
+                    printf("Quiz #%d: %d  ",b+1,array[i][a][b]);
+                }
+
+            }
+            printf("\n\n");
+        }
+    }
+
+
+
+    return 0;
+}
